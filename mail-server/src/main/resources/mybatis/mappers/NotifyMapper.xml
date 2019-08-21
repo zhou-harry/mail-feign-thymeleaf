@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="public">
+
+    <resultMap id="notifyTemplateResult" type="NotifyTemplateEntity">
+        <id property="id" column="id"/>
+        <result property="systemID" column="system_id"/>
+        <result property="serverID" column="server_id"/>
+        <result property="typeID" column="type_id"/>
+        <result property="context" column="context"/>
+    </resultMap>
+
+
+    <select id="findEmailTemplate" resultType="String">
+        SELECT context FROM t_nodify_template WHERE system_id=#{systemID} AND server_id=#{serverID} AND type_id='1'
+    </select>
+
+
+</mapper>
