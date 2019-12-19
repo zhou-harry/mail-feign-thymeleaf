@@ -38,7 +38,7 @@ public class FeignBasicAuthRequestInterceptor implements RequestInterceptor {
 
         HttpServletRequest request = attributes.getRequest();
 
-        logger.info("====token:", request.getHeader("Access-Token"));
+        logger.info("====token:{}", request.getHeader("Access-Token"));
 
         //添加token
         requestTemplate.header("Access-Token", request.getHeader("Access-Token"));
